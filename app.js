@@ -1,50 +1,35 @@
+const user = {
+    firstName: 'Veronika',
+    age: 22,
+    isAdmin: true,
+    email: 'veronika__kozhina@gmail.com',
+    'user-address': {
+        city: 'odessa'
+    },
+    skills: ['html', 'css', 'js']
+};
+
 let value;
+let prop = 'email';
 
-// Number to string
-value = String(12);
-value = String(12+8);
-value = (40).toString();
+value = user.firstName;
+value = user['isAdmin'];
+value = user['user-address'];
+value = user['user-address'].city;
+value = user['user-address']['city']; //analog value = user['user-address'].city;
 
-// Boolean to String
-value = String(true); // true string
+value = user[prop]; //veronika__kozhina@gmail.com
+value = user[prop][0]; //v
 
-// Arrey to String
-value = String([1, 2, 3])  // 1,2,3 string
+value.firstName = 'Veronika';
 
-// Object to String
-value = String({ name: 'Andrew' }); // object Object string
+value = user.firstName;
 
-// implicit conversion
-value = 20 + '' + 20; // 2020 string
-value = 20 - ''; // number
-value = 20 - '2'; // number 22
-value = 20 - 'b'; // NuN
-value = 20 + '' + undefined; // 20undefined
+user.info = 'Some info';
 
-value = true + 10; //11
-value = false + undefined; // NuN
-
-// String to number
-value = Number('20'); // 20 number
-value = Number(true); // 1
-value = Number(null); // 0
-value = Number('false'); // NuN
-value = Number([1,2,3]); // NuN
-
-value = parseInt('22');  // 22 number
-value = parseInt('22px');  // 22 number
-value = parseInt('px22');  // NuN
-
-// Boolean
-value = Boolean('hello'); //true
-value = Boolean(''); // false
-value = Boolean(12);  // true
-value = Boolean(0);  // false
-value = Boolean(undefined); // false
-value = Boolean(null); // false
-value = Boolean({}); // true
-value = Boolean([]); // true
+user['user-address'].city = 'Lviv';
+user['user-address'].contry = 'Ukraine';
 
 console.log(value);
-console.log(typeof value);
 
+console.log(user);
